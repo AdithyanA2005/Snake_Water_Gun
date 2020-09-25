@@ -1,5 +1,4 @@
 # SNAKE WATER GUN
-
 # In this game the player will play with the computer'Computer'
 # and the user 'Player'
 
@@ -57,7 +56,9 @@ def playRule(Computer, Player):
 # First the turn is for the computer and we will print
 print("\nComputer Turn: Snake(s) Water(w) or Gun(g)")
 
+
 # We use the 'Random' module to make the computer choose "'s' or 'w' or 'g'"  randomly
+# the 'randit' provide number from first number to the last number
 RandomNumber = random.randint(1, 3)
 if RandomNumber == 1:  # If random number is 1 the computer choose for 'Snake'
     Computer = 's'
@@ -69,7 +70,7 @@ elif RandomNumber == 3:  # If random number is 3 the computer choose for 'Gun'
     Computer = 'g'
 
 # After the computer have choosed we will tell the user that the comuter had choosed
-print(f"Computer Choosed{Computer}")
+print(f"Computer Choosed")
 
 # After the computer it is the players turn to put the input
 Player = input("\nYour Turn: Snake(s) Water(w) or Gun(g)")
@@ -79,10 +80,12 @@ Player = input("\nYour Turn: Snake(s) Water(w) or Gun(g)")
 result = playRule(Computer, Player)  
 
 # We will also show the selection of the Computer and the Player to the user
-print(f"Computer Choosed: {Computer}")
-print(f"You Choosed: {Player}")
+print(f"\nComputer Choosed: {Computer}")
+print(f"You Choosed: {Player}\n")
+
 
 # Now we are creating other if case to declare who had winned the game 
+
 # if The user and the computer are in tie('None')
 if result == None:
     print("The game was a tie match")
