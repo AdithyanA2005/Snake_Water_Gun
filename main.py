@@ -5,13 +5,13 @@
 
 
 
+
 # Importing Modules needed for the game
 import random
 
 
-
 # Function's needed for the program
-def whoWin(Computer, Player):
+def playRule(Computer, Player):
 
     # 1) If the computer and the player choose same nothing will happen
     if Computer == Player:
@@ -50,10 +50,12 @@ def whoWin(Computer, Player):
         elif Player == 'w':
             return True
 
-            
 
+
+
+# START
 # First the turn is for the computer and we will print
-print("Computer Turn: Snake(s) Water(w) or Gun(g)")
+print("\nComputer Turn: Snake(s) Water(w) or Gun(g)")
 
 # We use the 'Random' module to make the computer choose "'s' or 'w' or 'g'"  randomly
 RandomNumber = random.randint(1, 3)
@@ -66,12 +68,28 @@ elif RandomNumber == 2:  # If random number is 2 the computer choose for 'Water'
 elif RandomNumber == 3:  # If random number is 3 the computer choose for 'Gun'
     Computer = 'g'
 
-
-print(RandomNumber)
-
+# After the computer have choosed we will tell the user that the comuter had choosed
+print(f"Computer Choosed{Computer}")
 
 # After the computer it is the players turn to put the input
-Player = input("Your Turn: Snake(s) Water(w) or Gun(g)")
+Player = input("\nYour Turn: Snake(s) Water(w) or Gun(g)")
 
 
-whoWin(Computer, Player)
+# We are calling the function we created earlier in 'result'
+result = playRule(Computer, Player)  
+
+# We will also show the selection of the Computer and the Player to the user
+print(f"Computer Choosed: {Computer}")
+print(f"You Choosed: {Player}")
+
+# Now we are creating other if case to declare who had winned the game 
+# if The user and the computer are in tie('None')
+if result == None:
+    print("The game was a tie match")
+
+# If the player scored the point('True')
+elif result:
+    print("You Win")
+
+else:
+    print('You loose')
