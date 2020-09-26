@@ -51,10 +51,20 @@ def playRule(computer, player):
 
 
 # PROGRAM START HERE:
+
+# There are only 10 rounds
+NoOfRounds = 10
+
+# We are creating a variable points to calculate the scores
+points = 0
+
 # To run the code infinitely many times
-while True:
+while NoOfRounds > 0:
     # First the turn is for the computer and we will print
-    print("\nComputer Turn: Snake(s) Water(w) or Gun(g)")
+    print("\n__________________________________________\n"
+          f"No of tries left: {NoOfRounds}\n"
+          f"__________________________________________\n"
+          "Computer Turn: Snake(s) Water(w) or Gun(g)")
 
     # We use the 'Random' module to make the computer choose "'s' or 'w' or 'g'"  randomly the 'randint' provide number
     # from first number to the last number
@@ -83,12 +93,22 @@ while True:
     print(f"\nComputer Choose: {Computer}")
     print(f"You Choose: {Player}\n")
 
-    # Now we are creating other if case to declare who had win the game
+    # Now we are creating other if case to declare who had scored the point
+
     if result is None:  # if The user and the computer are in tie('None')
-        print("The game was a tie match")
+        points = points
+        print("This turn was a tie round")
 
-    elif result:  # If the player win
-        print("You Win")
+    elif result:  # If the player scored
+        points = points + 1
+        print("You Scored the Point")
 
-    else:  # If the player loose
-        print('You loose')
+    else:  # If the computer scored
+        points = points - 1
+        print('Computer Scored the Point ')
+
+    # after each rounds the number of round is reduced
+    NoOfRounds = NoOfRounds - 1
+    print(points)
+
+
