@@ -58,6 +58,10 @@ NoOfRounds = 10
 # We are creating a variable points to calculate the scores
 points = 0
 
+# We will also show the rules to the user
+print("There are only 10 rounds\n"
+      "If you scored more than 6 time\n"
+      "You will 'win' otherwise You 'loose'\n")
 # To run the code infinitely many times
 while NoOfRounds > 0:
     # First the turn is for the computer and we will print
@@ -112,3 +116,4 @@ while NoOfRounds > 0:
     print(points)
 
 
+# Now Fianlly we need to print who is the winner
