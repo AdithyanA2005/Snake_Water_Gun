@@ -17,6 +17,9 @@ import random
 
 # FUNCTION'S
 # Function's needed for the program
+from numpy import poly1d
+
+
 def playRule(computer, player):
     # 1) If the computer and the player choose same nothing will happen
     if computer == player:
@@ -85,7 +88,7 @@ while NoOfRounds > 0:
         Computer = 'g'
 
     # After the computer have choose we will tell the user that the comuter had choosed
-    print(f"Computer Choose{Computer}")
+    print(f"Computer Choose")
 
     # After the computer it is the players turn to put the input
     Player = input("\nYour Turn: Snake(s) Water(w) or Gun(g)")
@@ -115,14 +118,12 @@ while NoOfRounds > 0:
     NoOfRounds = NoOfRounds - 1
     print(points)
 
-
 # Now Finally we need to print who is the winner
 if points > 5:  # If the user scored more than computer
-    print("YOU HAVE 'WINED'")
+    print(f"YOU HAVE 'WINED' : {points}")
 
-elif points < 5: #if The user scored less than computer
-    print("YOU 'LOOSE'")
+elif points < 5:  # if The user scored less than computer
+    print(f"YOU 'LOOSE' : {points}")
 
-elif points == 5:  #If the match was a tie
-    print("THE MATCH IS A TIE")
-
+elif points == 5:  # If the match was a tie
+    print(f"THE MATCH IS A TIE : {points}")
