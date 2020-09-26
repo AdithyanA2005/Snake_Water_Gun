@@ -116,4 +116,13 @@ while NoOfRounds > 0:
     print(points)
 
 
-# Now Fianlly we need to print who is the winner
+# Now Finally we need to print who is the winner
+if points > 5:  # If the user scored more than computer
+    print("YOU HAVE 'WINED'")
+
+elif points < 5: #if The user scored less than computer
+    print("YOU 'LOOSE'")
+
+elif points == 5:  #If the match was a tie
+    print("THE MATCH IS A TIE")
+
